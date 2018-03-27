@@ -1,41 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _2C
 {
     class Program
     {       //Syntactic sugar is syntax designed to make things easier to read or to express.
 
+        static void Main(string[] args)
+        {
+            Bleed();
+        }
 
-        static void Main(string[] args) => Bleed();
+        //static void Bleed(string me = "I", string blood = "Orange")
+        //{
+        //    Console.WriteLine($"{me} bleed {blood}");
+        //}
 
-        static void Bleed(string Me = "I", string Blood = "Orange")
+        static void Bleed(string me, string blood)
         {
-            Console.WriteLine($"{Me} bleed {Blood}");
-            Manual.Me(); Manual.Blood();
+            Console.WriteLine($"{me} bleed {blood}");
         }
-        static void Bleed(string Me = "I", string Blood = "Orange", string Time = "Always")
+
+        static void Bleed(string me)
         {
-            Console.WriteLine($"{Me} {Time} bleed {Blood}");
-            Manual.Me(); Manual.Time(); Manual.Blood();
+            Bleed(me, "Red");
         }
-    }
-    class Manual
-    {
-        public static string Me()
+
+        static void Bleed()
         {
-            return ("I");
+            Bleed("I");
         }
-        public static string Blood()
-        {
-            return ("Orange");
-        }
-        public static string Time()
-        {
-            return ("");
-        }
+
     }
 }
